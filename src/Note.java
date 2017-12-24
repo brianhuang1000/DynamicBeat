@@ -24,19 +24,19 @@ public class Note extends Thread {
         super();
         switch (noteType) {
             case 0:
-                x=228;
+                x=240;
                 this.noteType=0;
                 break;
             case 1:
-                x=332;
+                x=400;
                 this.noteType=1;
                 break;
             case 2:
-                x=436;
+                x=560;
                 this.noteType=2;
                 break;
             case 3:
-                x=540;
+                x=720;
                 this.noteType=3;
                 break;
         }
