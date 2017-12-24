@@ -68,6 +68,7 @@ public class DynamicMain extends JFrame {
         setVisible(true);
         setBackground(new Color(0,0,0,0));
         setLayout(null);
+        //setFocusable(true);
 
         background = new ImageIcon(Main.class.getResource("Images/bg.jpg")).getImage();
 
