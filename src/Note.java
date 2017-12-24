@@ -69,7 +69,7 @@ public class Note extends Thread {
                     timeDiff = System.currentTimeMillis()-beforeTime;
                     sleep = Main.SLEEP_TIME-timeDiff;
                     if(sleep<0){
-                        sleep=2;
+                        sleep=1;
                     }
                     Thread.sleep(sleep);
                 } else{

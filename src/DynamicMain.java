@@ -59,11 +59,12 @@ public class DynamicMain extends JFrame {
         trackList.add(new Track("her.png","wall1.jpg","wall2.jpg","07 - Hear The Universe.mp3","07 - Hear The Universe.mp3","Track 1"));
         trackList.add(new Track("wall2.jpg","wall2.jpg","wall2.jpg","08 - GIRAFFE BLUES.mp3","08 - GIRAFFE BLUES.mp3", "Track 2"));
 
-        setUndecorated(true);
-        setTitle("Dynamic Beat");
-        setSize(Main.SCREEN_WIDTH,Main.SCREEN_HEIGHT);
+        //setting up the window
+        setUndecorated(true); //bar on top
+        setTitle("Dynamic Beat"); //name
+        setSize(Main.SCREEN_WIDTH,Main.SCREEN_HEIGHT); //setting size
         setResizable(false);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); //relative on screen
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setBackground(new Color(0,0,0,0));
