@@ -27,6 +27,9 @@ public class DynamicMain extends JFrame {
     private ImageIcon startGameSelected = new ImageIcon(Main.class.getResource("Images/startGamePressed.png"));
     private ImageIcon backButtonDefault = new ImageIcon(Main.class.getResource("Images/leftDefault.png"));
     private ImageIcon backButtonSelected = new ImageIcon(Main.class.getResource("Images/leftSelected.png"));
+    private Image settingTitle = new ImageIcon(Main.class.getResource("Images/startDefault.png")).getImage();
+    private Image settingResolution = new ImageIcon(Main.class.getResource("Images/startDefault.png")).getImage();
+    private Image settingKeyBind = new ImageIcon(Main.class.getResource("Images/startDefault.png")).getImage();
 
     private ImageIcon settingDefaultImage = new ImageIcon(Main.class.getResource("Images/startGameDefault.png"));
     private ImageIcon settingSelectedImage = new ImageIcon(Main.class.getResource("Images/startGamePressed.png"));
@@ -53,6 +56,7 @@ public class DynamicMain extends JFrame {
     private int nowSelected = 0;
 
     private boolean isGameScreen = false;
+    private boolean isSettingScreen=false;
 
     public static Game game;
 
@@ -145,6 +149,7 @@ public class DynamicMain extends JFrame {
             }
             @Override
             public void mousePressed(MouseEvent e){
+                isSettingScreen=true;
                 enterSettings();
             }
         });
@@ -303,6 +308,11 @@ public class DynamicMain extends JFrame {
         }
         if(isGameScreen){
             game.screenDraw(g);
+        }
+        if(isSettingScreen){
+            g.drawImage(settingTitle,540,10,null);
+            g.drawImage(settingResolution, 180, 100, null);
+            g.drawImage(settingKeyBind, 180, 300, null);
         }
         paintComponents(g);
         try{
