@@ -382,6 +382,6 @@ public class DynamicMain extends JFrame {
         startSelectButton.setVisible(false);
         endSelectButton.setVisible(false);
         settingButton.setVisible(false);
-        
+
     }
 }
