@@ -28,7 +28,8 @@ public class DynamicMain extends JFrame {
     private ImageIcon backButtonDefault = new ImageIcon(Main.class.getResource("Images/leftDefault.png"));
     private ImageIcon backButtonSelected = new ImageIcon(Main.class.getResource("Images/leftSelected.png"));
 
-
+    private ImageIcon settingDefaultImage = new ImageIcon(Main.class.getResource("Images/startGameDefault.png"));
+    private ImageIcon settingSelectedImage = new ImageIcon(Main.class.getResource("Images/startGamePressed.png"));
 
     private JButton exitButton = new JButton(exitButtonImage);
     private JButton endSelectButton = new JButton(endSelectImage);
@@ -37,6 +38,7 @@ public class DynamicMain extends JFrame {
     private JButton leftButton = new JButton(selectLeftDefault);
     private JButton startGameButton = new JButton(startGameDefault);
     private JButton backButton = new JButton(backButtonDefault);
+    private JButton settingButton = new JButton(settingDefaultImage);
 
     private int mouseX,mouseY;
 
@@ -125,6 +127,28 @@ public class DynamicMain extends JFrame {
             }
         });
         add(startSelectButton);
+
+        settingButton.setBounds(500,200,400,100);
+        settingButton.setBorderPainted(false);
+        settingButton.setContentAreaFilled(false);
+        settingButton.setFocusPainted(false);
+        settingButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                settingButton.setIcon(settingSelectedImage);
+                settingButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+            @Override
+            public void mouseExited(MouseEvent e){
+                settingButton.setIcon(settingDefaultImage);
+                settingButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+            }
+            @Override
+            public void mousePressed(MouseEvent e){
+                enterSettings();
+            }
+        });
+        add(settingButton);
 
         endSelectButton.setBounds(40,330,400,100);
         endSelectButton.setBorderPainted(false);
@@ -346,10 +370,18 @@ public class DynamicMain extends JFrame {
         selectTrack(0);
         startSelectButton.setVisible(false);
         endSelectButton.setVisible(false);
+        settingButton.setVisible(false);
         leftButton.setVisible(true);
         rightButton.setVisible(true);
         startGameButton.setVisible(true);
         background = selectedBackground;
         isMainScreen= false;
+    }
+
+    public void enterSettings(){
+        startSelectButton.setVisible(false);
+        endSelectButton.setVisible(false);
+        settingButton.setVisible(false);
+        
     }
 }
